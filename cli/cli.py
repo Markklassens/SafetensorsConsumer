@@ -304,8 +304,6 @@ def main():
     args.func(args)
 
 
-if __name__ == "__main__":
-    main()
 
 
 # ── Progressive session commands (added for progressive shard loading) ────────
@@ -444,3 +442,7 @@ Examples:
                    help="Load all remaining shards (for 'run')")
     p.set_defaults(func=cmd_progressive)
     return p
+
+if __name__ == "__main__":
+    main()
+
