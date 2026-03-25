@@ -1,0 +1,11 @@
+# SRHN v5 — minimum dependencies (works on Raspberry Pi 4, x86, ARM)
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Optional upgrades (all zero API changes — just install and run):
+# pip install sentence-transformers   # 80MB model, 10× better embeddings
+# pip install openai                  # OpenAI / LM Studio / vLLM / any OpenAI-compatible API
+# pip install anthropic               # Claude API
+# pip install transformers accelerate # Local HuggingFace models (CPU)
+# Ollama (best for edge): https://ollama.ai  →  ollama pull phi3.5 (3.8B, runs on 4GB RAM)
+# Ollama embedding model: ollama pull nomic-embed-text

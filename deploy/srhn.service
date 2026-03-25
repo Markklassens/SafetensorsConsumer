@@ -1,0 +1,22 @@
+[Unit]
+Description=SRHN Assembly — Private AI for Medical / Legal / DevOps / Sports
+After=network.target
+Wants=ollama.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/srhn_assembly
+Environment=SRHN_STORE=/home/pi/srhn_data
+Environment=SRHN_LLM=ollama
+Environment=SRHN_MODEL=phi3.5
+Environment=SRHN_API_KEY=REPLACE_WITH_YOUR_KEY
+Environment=PORT=8765
+ExecStart=/usr/bin/python3 main.py server --llm ollama --model phi3.5 --edge
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
